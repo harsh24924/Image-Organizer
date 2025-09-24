@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    background-color: #0f0f14;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Inter";
+    color: #ffffff;
+}
+
+.card {
+    border-radius: 50px;
+    border-width: 2px;
+    border-color: #2196f3;
+    background-color: #141419;
+    border-style: solid;
+    width: 80%;
+    height: 80vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+button {
+    background-color: #2196f3;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #0b7dda;
+}
+
+.response {
+    color: #ffffff;
+}
+
+.upload-container {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.drop-zone {
+    border: 2px dashed #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    width: 90%; /* Adjust width to fit within the card */
+    max-width: 400px; /* Optional: Set a max width */
+    height: 200px; /* Fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For positioning image preview */
+    overflow: hidden; /* Hide overflow for the image */
+}
+
+.drop-zone:hover {
+    border: 2px dashed #2196f3;
+}
+
+.drop-zone.drag-over {
+    border-color: #2196f3;
+}
+
+.drop-zone-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.file-input {
+    display: none; /* Hide the default file input */
+}
+
+.uploaded-image-preview {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure the image fits without cropping */
+    border-radius: 8px; /* Slightly rounded corners for the preview */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Place image behind the text */
+}
+
+#imagePreview:empty + .drop-zone-text {
+    display: block; /* Show text when no image is present */
+}
+
+#imagePreview:not(:empty) + .drop-zone-text {
+    display: none; /* Hide text when an image is present */
+}
