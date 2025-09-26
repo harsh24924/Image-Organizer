@@ -6,3 +6,4 @@ transformers
 pillow
 httpx
 pytest
+scikit-learn
